@@ -181,6 +181,8 @@ namespace CardSuits
         {
             bool gameLoop = true;
             string input;
+            bool trueRank;
+            Card card2;
             //Game Loop
             while (gameLoop == true)
             {
@@ -203,6 +205,7 @@ namespace CardSuits
                 Console.WriteLine(p1);
                 Console.WriteLine("What card rank are you asking for?");
                 input = Console.ReadLine();
+                card2.pRank = Enum.Parse(input);
                 //Turn End / Draw Phase(If "Go Fished")
                 //Player 2 turn
                 Console.WriteLine(p2);
