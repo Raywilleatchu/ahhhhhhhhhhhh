@@ -1,0 +1,13 @@
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Assessment3\bin\Debug\netcoreapp3.1\Assessment3.exe
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Assessment3\bin\Debug\netcoreapp3.1\Assessment3.deps.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Assessment3\bin\Debug\netcoreapp3.1\Assessment3.runtimeconfig.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Assessment3\bin\Debug\netcoreapp3.1\Assessment3.runtimeconfig.dev.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Assessment3\bin\Debug\netcoreapp3.1\Assessment3.dll
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Assessment3\bin\Debug\netcoreapp3.1\Assessment3.pdb
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Assessment3\obj\Debug\netcoreapp3.1\Assessment3.csproj.AssemblyReference.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Assessment3\obj\Debug\netcoreapp3.1\Assessment3.AssemblyInfoInputs.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Assessment3\obj\Debug\netcoreapp3.1\Assessment3.AssemblyInfo.cs
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Assessment3\obj\Debug\netcoreapp3.1\Assessment3.csproj.CoreCompileInputs.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Assessment3\obj\Debug\netcoreapp3.1\Assessment3.dll
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Assessment3\obj\Debug\netcoreapp3.1\Assessment3.pdb
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Assessment3\obj\Debug\netcoreapp3.1\Assessment3.genruntimeconfig.cache

@@ -14,7 +14,7 @@ namespace CardSuits
 
         public Card()
         {
-
+            //Default
         }
 
         public enum Suit
@@ -181,8 +181,8 @@ namespace CardSuits
         {
             bool gameLoop = true;
             string input;
-            bool trueRank;
-            Card card2;
+            int pairCount;
+            Card checkCard = new Card();
             //Game Loop
             while (gameLoop == true)
             {
@@ -203,12 +203,73 @@ namespace CardSuits
                 //Player 1 turn
                 Console.WriteLine($"{p1.Name}'s Turn");
                 Console.WriteLine(p1);
+                Console.WriteLine($"\n\nFor Debugging:\n{p2}");
                 Console.WriteLine("What card rank are you asking for?");
                 input = Console.ReadLine();
-                card2.pRank = Enum.Parse(input);
+                checkCard.pRank = (Card.Rank)Enum.Parse(typeof(Card.Rank), input);
+                pairCount = 0;
+                foreach (var card in p2.Hand)
+                {
+                    if (checkCard.pRank == card.pRank)
+                    {
+                        pairCount++;
+                    }
+                }
+                if (pairCount > 0)
+                {
+                    Console.WriteLine("You took my cards!");
+                    for (int i = p2.Hand.Count - 1; i >= 0; --i)
+                    {
+                        if (p2.Hand[i].pRank == checkCard.pRank)
+                        {
+                            p1.Hand.Add(p2.Hand[i]);
+                            p2.Hand.Remove(p2.Hand[i]);
+                        }
+                    }
+                }
                 //Turn End / Draw Phase(If "Go Fished")
-                //Player 2 turn
+                else
+                {
+                    Console.WriteLine("Go Fish!");
+                    p1.Hand.Add(deck[1]);
+                    deck.Remove(deck[1]);
+
+                }
+                Console.WriteLine($"{p1}\n\n");
+                
+                //Player 2 turn //update variables!!!!!!!!!!
+                Console.WriteLine($"{p2.Name}'s Turn");
                 Console.WriteLine(p2);
+                Console.WriteLine($"\n\nFor Debugging:\n{p1}");
+                Console.WriteLine("What card rank are you asking for?");
+                input = Console.ReadLine();
+                checkCard.pRank = (Card.Rank)Enum.Parse(typeof(Card.Rank), input);
+                pairCount = 0;
+                foreach (var card in p2.Hand)
+                {
+                    if (checkCard.pRank == card.pRank)
+                    {
+                        pairCount++;
+                    }
+                }
+                if (pairCount > 0)
+                {
+                    Console.WriteLine("You took my cards!");
+                    for (int i = p2.Hand.Count - 1; i >= 0; --i)
+                    {
+                        if (p2.Hand[i].pRank == checkCard.pRank)
+                        {
+                            p1.Hand.Add(p2.Hand[i]);
+                            p2.Hand.Remove(p2.Hand[i]);
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Go Fish!");
+                }
+                Console.WriteLine($"{p1}\n\n");
+
                 //Turn End / Draw Phase(If "Go Fished")
             }
         }
@@ -265,6 +326,36 @@ namespace CardSuits
             //    count++;
             //    Console.WriteLine($"[{count}] {card}");
             //}
+
+
+
+
+
+
+
+            /*
+             Reccomended by Antonio to parse values(ints & strings) to enums:
+                Rank rank;
+                Card newCard = new Card();
+                if (Enum.TryParse(input, out Rank rank))
+                {
+                    if (Enum.IsDefined(typeof(Rank), rank))
+                    {
+                        newCard.pRank = rank;
+
+                        Console.WriteLine($"((((( new card rank: {newCard.pRank} )))))");
+                    }
+                    else
+                    {
+                        Console.WriteLine("whoa you entered a number which is fine, but it was too big or too small");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("SUper bad input!!");
+                }
+             If possible implement this to GoFish() for efficient card checking
+             */
         }
     }
 }
