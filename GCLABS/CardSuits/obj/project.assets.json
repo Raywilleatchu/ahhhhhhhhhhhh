@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rmansour2\\Documents\\GCREPO\\GCLABS\\Lab4_2\\Lab4_3.csproj",
-      "projectName": "Lab4_3",
-      "projectPath": "C:\\Users\\Rmansour2\\Documents\\GCREPO\\GCLABS\\Lab4_2\\Lab4_3.csproj",
+      "projectUniqueName": "C:\\Users\\Rmansour2\\Documents\\GCREPO\\GCLABS\\CardSuits\\CardSuits.csproj",
+      "projectName": "CardSuits",
+      "projectPath": "C:\\Users\\Rmansour2\\Documents\\GCREPO\\GCLABS\\CardSuits\\CardSuits.csproj",
       "packagesPath": "C:\\Users\\Rmansour2\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rmansour2\\Documents\\GCREPO\\GCLABS\\Lab4_2\\obj\\",
+      "outputPath": "C:\\Users\\Rmansour2\\Documents\\GCREPO\\GCLABS\\CardSuits\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

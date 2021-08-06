@@ -1,0 +1,13 @@
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\CardSuits\bin\Debug\netcoreapp3.1\CardSuits.exe
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\CardSuits\bin\Debug\netcoreapp3.1\CardSuits.deps.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\CardSuits\bin\Debug\netcoreapp3.1\CardSuits.runtimeconfig.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\CardSuits\bin\Debug\netcoreapp3.1\CardSuits.runtimeconfig.dev.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\CardSuits\bin\Debug\netcoreapp3.1\CardSuits.dll
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\CardSuits\bin\Debug\netcoreapp3.1\CardSuits.pdb
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\CardSuits\obj\Debug\netcoreapp3.1\CardSuits.csproj.AssemblyReference.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\CardSuits\obj\Debug\netcoreapp3.1\CardSuits.AssemblyInfoInputs.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\CardSuits\obj\Debug\netcoreapp3.1\CardSuits.AssemblyInfo.cs
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\CardSuits\obj\Debug\netcoreapp3.1\CardSuits.csproj.CoreCompileInputs.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\CardSuits\obj\Debug\netcoreapp3.1\CardSuits.dll
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\CardSuits\obj\Debug\netcoreapp3.1\CardSuits.pdb
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\CardSuits\obj\Debug\netcoreapp3.1\CardSuits.genruntimeconfig.cache
