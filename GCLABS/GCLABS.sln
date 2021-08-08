@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lab4_3", "Lab4_2\Lab4_3.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CardSuits", "CardSuits\CardSuits.csproj", "{FE0B0DA1-9EA6-4DCA-8B6D-47F4636FD2ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assessment3", "Assessment3\Assessment3.csproj", "{41DC417C-EED3-4C0B-B9A8-4D63D606C552}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assessment3", "Assessment3\Assessment3.csproj", "{41DC417C-EED3-4C0B-B9A8-4D63D606C552}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
