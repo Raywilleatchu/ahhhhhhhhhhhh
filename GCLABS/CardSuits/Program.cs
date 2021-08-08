@@ -68,6 +68,12 @@ namespace CardSuits
         }
 
 
+        public Card SetRS(Rank rank, Suit suit)
+        {
+            this.pRank = rank;
+            this.pSuit = suit;
+            return this;
+        }
 
 
 
@@ -151,6 +157,17 @@ namespace CardSuits
             return hand;
         }
 
+        public List<Card> Draw(List<Card> hand, List<Card> deck, int howMany)
+        {
+            for (int i = 0; i < howMany; i++)
+            {
+                Console.WriteLine($"{Name} Draws!");
+                hand.Add(deck[i]);
+                deck.Remove(deck[i]);
+            }
+            return hand;
+        }
+
         public override string ToString()
         {
             Console.WriteLine($"{Name}'s Hand: ");
@@ -184,22 +201,73 @@ namespace CardSuits
             int pairCount;
             Card checkCard = new Card();
             //Game Loop
+            List<Card> deck = CreateDeck();
+            //P1 Books
+            List<Card> p1aceBook = new List<Card>();
+            List<Card> p1twoBook = new List<Card>();
+            List<Card> p1threeBook = new List<Card>();
+            List<Card> p1fourBook = new List<Card>();
+            List<Card> p1fiveBook = new List<Card>();
+            List<Card> p1sixBook = new List<Card>();
+            List<Card> p1sevenBook = new List<Card>();
+            List<Card> p1eightBook = new List<Card>();
+            List<Card> p1nineBook = new List<Card>();
+            List<Card> p1tenBook = new List<Card>();
+            List<Card> p1jackBook = new List<Card>();
+            List<Card> p1queenBook = new List<Card>();
+            List<Card> p1kingBook = new List<Card>();
+            //P2 Books
+            List<Card> p2aceBook = new List<Card>();
+            List<Card> p2twoBook = new List<Card>();
+            List<Card> p2threeBook = new List<Card>();
+            List<Card> p2fourBook = new List<Card>();
+            List<Card> p2fiveBook = new List<Card>();
+            List<Card> p2sixBook = new List<Card>();
+            List<Card> p2sevenBook = new List<Card>();
+            List<Card> p2eightBook = new List<Card>();
+            List<Card> p2nineBook = new List<Card>();
+            List<Card> p2tenBook = new List<Card>();
+            List<Card> p2jackBook = new List<Card>();
+            List<Card> p2queenBook = new List<Card>();
+            List<Card> p2kingBook = new List<Card>();
+
+            List<List<Card>> p1Books = new List<List<Card>>() { p1aceBook, p1twoBook, p1threeBook, p1fourBook, p1fiveBook, p1sixBook, p1sevenBook, p1eightBook, p1nineBook, p1tenBook, p1jackBook, p1queenBook, p1kingBook };
+            List<List<Card>> p2Books = new List<List<Card>>() { p2aceBook, p2twoBook, p2threeBook, p2fourBook, p2fiveBook, p2sixBook, p2sevenBook, p2eightBook, p2nineBook, p2tenBook, p2jackBook, p2queenBook, p2kingBook };
+
+            Console.WriteLine("Shuffling Cards");
+            for (int i = 0; i <= 10; i++)
+            {
+                deck = ShuffleDeck(deck);
+            }
+            Console.WriteLine("Cards Shuffled");
+            //Draw Phase for both players
+            Player p1 = new Player("Ray", 5);
+            Console.WriteLine("=========================");
+            //p1.Hand = deck;
+
+            /* Debug Code */
+            Card c1 = new Card();
+            c1.pRank = Card.Rank.Ace;
+            c1.SetRS(Card.Rank.Ace, Card.Suit.Clubs);
+            for (int i = 0; i < 3; i++)
+            {
+                p1.Hand.Add(c1);
+            }
+            /* Debug Code */
+
+            Player p2 = new Player("Comp", 5);
+            Console.WriteLine("=========================");
+            //p2.Hand = deck;
+
+            /* Debug Code */
+            Card c2 = new Card();
+            c2.pRank = Card.Rank.Ace;
+            c2.SetRS(Card.Rank.Ace, Card.Suit.Clubs);
+            p2.Hand.Add(c2);
+            /* Debug Code */
+
             while (gameLoop == true)
             {
-                List<Card> deck = CreateDeck();
-                Console.WriteLine("Shuffling Cards");
-                for (int i = 0; i <= 10; i++)
-                {
-                    deck = ShuffleDeck(deck);
-                }
-                Console.WriteLine("Cards Shuffled");
-                //Draw Phase for both players
-                Player p1 = new Player("Ray", 5);
-                Console.WriteLine("=========================");
-                p1.Hand = deck;
-                Player p2 = new Player("Comp", 5);
-                Console.WriteLine("=========================");
-                p2.Hand = deck;
                 //Player 1 turn
                 Console.WriteLine($"{p1.Name}'s Turn");
                 Console.WriteLine(p1);
@@ -217,7 +285,7 @@ namespace CardSuits
                 }
                 if (pairCount > 0)
                 {
-                    Console.WriteLine("You took my cards!");
+                    Console.WriteLine($"You took {p2.Name}'s card(s)!");
                     for (int i = p2.Hand.Count - 1; i >= 0; --i)
                     {
                         if (p2.Hand[i].pRank == checkCard.pRank)
@@ -227,16 +295,89 @@ namespace CardSuits
                         }
                     }
                 }
+
                 //Turn End / Draw Phase(If "Go Fished")
                 else
                 {
                     Console.WriteLine("Go Fish!");
-                    p1.Hand.Add(deck[1]);
-                    deck.Remove(deck[1]);
-
+                    p1.Draw(p1.Hand, deck, 1);
                 }
-                Console.WriteLine($"{p1}\n\n");
-                
+
+                for (int i = p1.Hand.Count - 1; i >= 0; --i)
+                {
+                    switch (p1.Hand[i].pRank)
+                    {
+                        case Card.Rank.Ace:
+                            p1Books[0].Add(p1.Hand[i]);
+                            p1.Hand.Remove(p1.Hand[i]);
+                            break;
+                        case Card.Rank.Two:
+                            p1Books[1].Add(p1.Hand[i]);
+                            p1.Hand.Remove(p1.Hand[i]);
+                            break;
+                        case Card.Rank.Three:
+                            p1Books[2].Add(p1.Hand[i]);
+                            p1.Hand.Remove(p1.Hand[i]);
+                            break;
+                        case Card.Rank.Four:
+                            p1Books[3].Add(p1.Hand[i]);
+                            p1.Hand.Remove(p1.Hand[i]);
+                            break;
+                        case Card.Rank.Five:
+                            p1Books[4].Add(p1.Hand[i]);
+                            p1.Hand.Remove(p1.Hand[i]);
+                            break;
+                        case Card.Rank.Six:
+                            p1Books[5].Add(p1.Hand[i]);
+                            p1.Hand.Remove(p1.Hand[i]);
+                            break;
+                        case Card.Rank.Seven:
+                            p1Books[6].Add(p1.Hand[i]);
+                            p1.Hand.Remove(p1.Hand[i]);
+                            break;
+                        case Card.Rank.Eight:
+                            p1Books[7].Add(p1.Hand[i]);
+                            p1.Hand.Remove(p1.Hand[i]);
+                            break;
+                        case Card.Rank.Nine:
+                            p1Books[8].Add(p1.Hand[i]);
+                            p1.Hand.Remove(p1.Hand[i]);
+                            break;
+                        case Card.Rank.Ten:
+                            p1Books[9].Add(p1.Hand[i]);
+                            p1.Hand.Remove(p1.Hand[i]);
+                            break;
+                        case Card.Rank.Jack:
+                            p1Books[10].Add(p1.Hand[i]);
+                            p1.Hand.Remove(p1.Hand[i]);
+                            break;
+                        case Card.Rank.Queen:
+                            p1Books[11].Add(p1.Hand[i]);
+                            p1.Hand.Remove(p1.Hand[i]);
+                            break;
+                        case Card.Rank.King:
+                            p1Books[12].Add(p1.Hand[i]);
+                            p1.Hand.Remove(p1.Hand[i]);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+
+                foreach(var book in p1Books)
+                {
+                    if (book.Count == 4)
+                    {
+                        Console.WriteLine($"{p1.Name} has a book of {book[0].pRank}s");
+                    }
+                }
+
+
+
+
+                //Console.WriteLine($"{p1}\n\n");                
+
+
                 //Player 2 turn //update variables!!!!!!!!!!
                 Console.WriteLine($"{p2.Name}'s Turn");
                 Console.WriteLine(p2);
@@ -245,7 +386,7 @@ namespace CardSuits
                 input = Console.ReadLine();
                 checkCard.pRank = (Card.Rank)Enum.Parse(typeof(Card.Rank), input);
                 pairCount = 0;
-                foreach (var card in p2.Hand)
+                foreach (var card in p1.Hand)
                 {
                     if (checkCard.pRank == card.pRank)
                     {
@@ -254,25 +395,94 @@ namespace CardSuits
                 }
                 if (pairCount > 0)
                 {
-                    Console.WriteLine("You took my cards!");
-                    for (int i = p2.Hand.Count - 1; i >= 0; --i)
+                    Console.WriteLine($"You took {p1.Name} cards!");
+                    for (int j = p1.Hand.Count - 1; j >= 0; --j)
                     {
-                        if (p2.Hand[i].pRank == checkCard.pRank)
+                        if (p1.Hand[j].pRank == checkCard.pRank)
                         {
-                            p1.Hand.Add(p2.Hand[i]);
-                            p2.Hand.Remove(p2.Hand[i]);
+                            p2.Hand.Add(p1.Hand[j]);
+                            p1.Hand.Remove(p1.Hand[j]);
                         }
                     }
                 }
+                //Turn End / Draw Phase(If "Go Fished")
                 else
                 {
                     Console.WriteLine("Go Fish!");
+                    p2.Draw(p2.Hand, deck, 1);
                 }
-                Console.WriteLine($"{p1}\n\n");
-
-                //Turn End / Draw Phase(If "Go Fished")
+                //Console.WriteLine($"{p1}\n\n");
+                for (int i = p2.Hand.Count - 1; i >= 0; --i)
+                {
+                    switch (p2.Hand[i].pRank)
+                    {
+                        case Card.Rank.Ace:
+                            p2Books[0].Add(p2.Hand[i]);
+                            p2.Hand.Remove(p2.Hand[i]);
+                            break;
+                        case Card.Rank.Two:
+                            p2Books[1].Add(p2.Hand[i]);
+                            p2.Hand.Remove(p2.Hand[i]);
+                            break;
+                        case Card.Rank.Three:
+                            p2Books[2].Add(p2.Hand[i]);
+                            p2.Hand.Remove(p2.Hand[i]);
+                            break;
+                        case Card.Rank.Four:
+                            p2Books[3].Add(p2.Hand[i]);
+                            p2.Hand.Remove(p2.Hand[i]);
+                            break;
+                        case Card.Rank.Five:
+                            p2Books[4].Add(p2.Hand[i]);
+                            p2.Hand.Remove(p2.Hand[i]);
+                            break;
+                        case Card.Rank.Six:
+                            p2Books[5].Add(p2.Hand[i]);
+                            p2.Hand.Remove(p2.Hand[i]);
+                            break;
+                        case Card.Rank.Seven:
+                            p2Books[6].Add(p2.Hand[i]);
+                            p2.Hand.Remove(p2.Hand[i]);
+                            break;
+                        case Card.Rank.Eight:
+                            p2Books[7].Add(p2.Hand[i]);
+                            p2.Hand.Remove(p2.Hand[i]);
+                            break;
+                        case Card.Rank.Nine:
+                            p2Books[8].Add(p2.Hand[i]);
+                            p2.Hand.Remove(p2.Hand[i]);
+                            break;
+                        case Card.Rank.Ten:
+                            p2Books[9].Add(p2.Hand[i]);
+                            p2.Hand.Remove(p2.Hand[i]);
+                            break;
+                        case Card.Rank.Jack:
+                            p2Books[10].Add(p2.Hand[i]);
+                            p2.Hand.Remove(p2.Hand[i]);
+                            break;
+                        case Card.Rank.Queen:
+                            p2Books[11].Add(p2.Hand[i]);
+                            p2.Hand.Remove(p2.Hand[i]);
+                            break;
+                        case Card.Rank.King:
+                            p2Books[12].Add(p2.Hand[i]);
+                            p2.Hand.Remove(p2.Hand[i]);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                foreach (var book in p2Books)
+                {
+                    if (book.Count == 4)
+                    {
+                        Console.WriteLine($"{p2.Name} has a book of {book[0].pRank}s");
+                    }
+                }
             }
         }
+
+
         public static List<Card> CreateDeck()
         {
             Card card = new Card();
@@ -316,6 +526,14 @@ namespace CardSuits
         {
 
             GoFish();
+            /*
+             * TODO LIST
+             * 1) Check rules for how many books needed to win (Win Condition, All 13 books have been collected.)
+             * 2) Create a check for the win condition (Whoever has the most books wins)
+             * 3) PROFIT$$$$$$$$$$$$$
+             */
+
+
 
             //Console.SetWindowSize(80, 20);
             //List<Card> deck = CreateDeck();
