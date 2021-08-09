@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CardSuits
 {
@@ -147,24 +148,30 @@ namespace CardSuits
 
         public List<Card> Draw(List<Card> hand, List<Card> deck)
         {
+            Program p = new Program();
             Console.WriteLine("Draw How Many?");
             int input = int.Parse(Console.ReadLine());
-            for (int i = 0; i < input; i++)
+            for (int i = input; i >= 0; --i)
             {
                 hand.Add(deck[i]);
                 deck.Remove(deck[i]);
             }
+            //p.Order(deck);
+            p.Shuffle(deck);
             return hand;
         }
 
         public List<Card> Draw(List<Card> hand, List<Card> deck, int howMany)
         {
-            for (int i = 0; i < howMany; i++)
+            Program p = new Program();
+            Console.WriteLine($"{Name} Draws!");
+            for (int i = howMany; i >= 0; --i)
             {
-                Console.WriteLine($"{Name} Draws!");
                 hand.Add(deck[i]);
                 deck.Remove(deck[i]);
             }
+            //p.Order(deck);
+            p.Shuffle(deck);
             return hand;
         }
 
@@ -199,9 +206,12 @@ namespace CardSuits
             bool gameLoop = true;
             string input;
             int pairCount;
+            int p1BookCount = 0;
+            int p2BookCount = 0;
             Card checkCard = new Card();
             //Game Loop
-            List<Card> deck = CreateDeck();
+            List<Card> deck = new List<Card>();
+            deck = CreateDeck();
             //P1 Books
             List<Card> p1aceBook = new List<Card>();
             List<Card> p1twoBook = new List<Card>();
@@ -234,6 +244,13 @@ namespace CardSuits
             List<List<Card>> p1Books = new List<List<Card>>() { p1aceBook, p1twoBook, p1threeBook, p1fourBook, p1fiveBook, p1sixBook, p1sevenBook, p1eightBook, p1nineBook, p1tenBook, p1jackBook, p1queenBook, p1kingBook };
             List<List<Card>> p2Books = new List<List<Card>>() { p2aceBook, p2twoBook, p2threeBook, p2fourBook, p2fiveBook, p2sixBook, p2sevenBook, p2eightBook, p2nineBook, p2tenBook, p2jackBook, p2queenBook, p2kingBook };
 
+            int cards = 0;
+            foreach (Card card in deck)
+            {
+                cards++;
+                Console.WriteLine($"{card}[{cards}]");
+            }
+
             Console.WriteLine("Shuffling Cards");
             for (int i = 0; i <= 10; i++)
             {
@@ -243,27 +260,34 @@ namespace CardSuits
             //Draw Phase for both players
             Player p1 = new Player("Ray", 5);
             Console.WriteLine("=========================");
-            //p1.Hand = deck;
 
+            p1.Hand = deck;
             /* Debug Code */
-            Card c1 = new Card();
-            c1.pRank = Card.Rank.Ace;
-            c1.SetRS(Card.Rank.Ace, Card.Suit.Clubs);
-            for (int i = 0; i < 3; i++)
-            {
-                p1.Hand.Add(c1);
-            }
+            //Card c1 = new Card();
+            //c1.pRank = Card.Rank.Ace;
+            //c1.SetRS(Card.Rank.Ace, Card.Suit.Clubs);
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    p1.Hand.Add(c1);
+            //}
             /* Debug Code */
 
             Player p2 = new Player("Comp", 5);
             Console.WriteLine("=========================");
-            //p2.Hand = deck;
 
+            cards = 0;
+            foreach (Card card in deck)
+            {
+                cards++;
+                Console.WriteLine($"{card}[{cards}]");
+            }
+
+            p2.Hand = deck;
             /* Debug Code */
-            Card c2 = new Card();
-            c2.pRank = Card.Rank.Ace;
-            c2.SetRS(Card.Rank.Ace, Card.Suit.Clubs);
-            p2.Hand.Add(c2);
+            //Card c2 = new Card();
+            //c2.pRank = Card.Rank.Ace;
+            //c2.SetRS(Card.Rank.Ace, Card.Suit.Clubs);
+            //p2.Hand.Add(c2);
             /* Debug Code */
 
             while (gameLoop == true)
@@ -308,7 +332,13 @@ namespace CardSuits
                     switch (p1.Hand[i].pRank)
                     {
                         case Card.Rank.Ace:
-                            p1Books[0].Add(p1.Hand[i]);
+                            foreach (Card card in p1Books[0]) //May or may not work
+                            {
+                                if (card != p1.Hand[i])
+                                {
+                                    p1Books[0].Add(p1.Hand[i]);
+                                }
+                            }
                             if (p1Books[0].Count == 4)
                             {
                                 for (int j = p1.Hand.Count - 1; j >= 0; --j)
@@ -486,10 +516,26 @@ namespace CardSuits
                     if (book.Count == 4)
                     {
                         Console.WriteLine($"{p1.Name} has a book of {book[0].pRank}s");
+                        Console.WriteLine($"{book[0].pRank} Amount: {book.Count}");
+                        foreach (Card card in book)
+                        {
+                            Console.WriteLine(card);
+                        }
                     }
                 }
 
-
+                if (!deck.Any() && !p1.Hand.Any() && !p2.Hand.Any())
+                {
+                    foreach (var book in p1Books)
+                    {
+                        p1BookCount++;
+                    }
+                    foreach (var book in p2Books)
+                    {
+                        p2BookCount++;
+                    }
+                    break;
+                }
 
 
                 //Console.WriteLine($"{p1}\n\n");                
@@ -711,7 +757,24 @@ namespace CardSuits
                     if (book.Count == 4)
                     {
                         Console.WriteLine($"{p2.Name} has a book of {book[0].pRank}s");
+                        foreach (Card card in book)
+                        {
+                            Console.WriteLine(card);
+                        }
                     }
+                }
+                
+                if (!deck.Any() && !p1.Hand.Any() && !p2.Hand.Any())
+                {
+                    foreach (var book in p1Books)
+                    {
+                        p1BookCount++;
+                    }
+                    foreach (var book in p2Books)
+                    {
+                        p2BookCount++;
+                    }
+                    break;
                 }
             }
         }
@@ -752,6 +815,34 @@ namespace CardSuits
             return deck;
         }
 
+        public List<Card> Shuffle(List<Card> deck)
+        {
+            Random rand = new Random();
+
+            for (int n = deck.Count - 1; n > 0; --n)
+            {
+                int k = rand.Next(n + 1);
+                Card temp = deck[n];
+                deck[n] = deck[k];
+                deck[k] = temp;
+            }
+            return deck;
+        }
+
+        public List<Card> Order(List<Card> deck)
+        {
+            int sorter = 0;
+            for (int n = deck.Count - 1; n > 0; --n)
+            {
+                sorter++;
+                int k = sorter;
+                deck.Insert(sorter, deck[n]);
+                //Card temp = deck[n];
+                //deck[n] = deck[k];
+                //deck[k] = temp;
+            }
+            return deck;
+        }
 
 
 
@@ -759,7 +850,7 @@ namespace CardSuits
         static void Main(string[] args)
         {
 
-            GoFish();
+            GoFish(); //Current Issue: Sometimes when its announced that a player has a book of cards, that player will still have their cards. Need to find out when this happens and why. Possibly in switch case
             /*
              * TODO LIST
              * 1) Check rules for how many books needed to win (Win Condition, All 13 books have been collected.)
