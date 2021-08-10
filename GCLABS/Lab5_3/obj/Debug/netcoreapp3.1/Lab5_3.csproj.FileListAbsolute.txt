@@ -1,0 +1,13 @@
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Lab5_3\bin\Debug\netcoreapp3.1\Lab5_3.exe
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Lab5_3\bin\Debug\netcoreapp3.1\Lab5_3.deps.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Lab5_3\bin\Debug\netcoreapp3.1\Lab5_3.runtimeconfig.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Lab5_3\bin\Debug\netcoreapp3.1\Lab5_3.runtimeconfig.dev.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Lab5_3\bin\Debug\netcoreapp3.1\Lab5_3.dll
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Lab5_3\bin\Debug\netcoreapp3.1\Lab5_3.pdb
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Lab5_3\obj\Debug\netcoreapp3.1\Lab5_3.csproj.AssemblyReference.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Lab5_3\obj\Debug\netcoreapp3.1\Lab5_3.AssemblyInfoInputs.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Lab5_3\obj\Debug\netcoreapp3.1\Lab5_3.AssemblyInfo.cs
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Lab5_3\obj\Debug\netcoreapp3.1\Lab5_3.csproj.CoreCompileInputs.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Lab5_3\obj\Debug\netcoreapp3.1\Lab5_3.dll
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Lab5_3\obj\Debug\netcoreapp3.1\Lab5_3.pdb
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Lab5_3\obj\Debug\netcoreapp3.1\Lab5_3.genruntimeconfig.cache
