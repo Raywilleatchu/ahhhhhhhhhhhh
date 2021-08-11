@@ -261,11 +261,18 @@ namespace CardSuits
             Player p1 = new Player("Ray", 5);
             Console.WriteLine("=========================");
 
-            p1.Hand = deck;
+            //p1.Hand = deck;
             /* Debug Code */
-            //Card c1 = new Card();
-            //c1.pRank = Card.Rank.Ace;
-            //c1.SetRS(Card.Rank.Ace, Card.Suit.Clubs);
+            Card c1 = new Card();
+            Card c2 = new Card();
+            Card c3 = new Card();
+            Card c4 = new Card();
+            c1.SetRS(Card.Rank.Ace, Card.Suit.Clubs);
+            p1.Hand.Add(c1);
+            c2.SetRS(Card.Rank.Ace, Card.Suit.Diamonds);
+            p1.Hand.Add(c2);
+            c3.SetRS(Card.Rank.Ace, Card.Suit.Spades);
+            p1.Hand.Add(c3);
             //for (int i = 0; i < 3; i++)
             //{
             //    p1.Hand.Add(c1);
@@ -282,12 +289,10 @@ namespace CardSuits
                 Console.WriteLine($"{card}[{cards}]");
             }
 
-            p2.Hand = deck;
+            //p2.Hand = deck;
             /* Debug Code */
-            //Card c2 = new Card();
-            //c2.pRank = Card.Rank.Ace;
-            //c2.SetRS(Card.Rank.Ace, Card.Suit.Clubs);
-            //p2.Hand.Add(c2);
+            c4.SetRS(Card.Rank.Ace, Card.Suit.Hearts);
+            p2.Hand.Add(c4);
             /* Debug Code */
 
             while (gameLoop == true)
@@ -327,19 +332,34 @@ namespace CardSuits
                     p1.Draw(p1.Hand, deck, 1);
                 }
 
+                int L2 = 4;
+                int a = 0;
+                int dupeCard = 0;
                 for (int i = p1.Hand.Count - 1; i >= 0; --i)
                 {
                     switch (p1.Hand[i].pRank)
                     {
                         case Card.Rank.Ace:
-                            foreach (Card card in p1Books[0]) //May or may not work
+                            if (p1aceBook.Count == 0)
                             {
-                                if (card != p1.Hand[i])
-                                {
-                                    p1Books[0].Add(p1.Hand[i]);
-                                }
+                                p1aceBook.Add(p1.Hand[i]);
                             }
-                            if (p1Books[0].Count == 4)
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1aceBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1aceBook[k].pSuit)
+                                {
+                                    dupeCard++;
+                                }   
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1aceBook.Add(p1.Hand[i]);
+                            }  
+
+                            if (p1aceBook.Count == 4)
                             {
                                 for (int j = p1.Hand.Count - 1; j >= 0; --j)
                                 {
@@ -350,9 +370,28 @@ namespace CardSuits
                                 }
                             }
                             break;
+
                         case Card.Rank.Two:
-                            p1Books[1].Add(p1.Hand[i]);
-                            if (p1Books[1].Count == 4)
+                            if (p1twoBook.Count == 0)
+                            {
+                                p1twoBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1twoBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1twoBook[k].pSuit)
+                                {
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1twoBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1twoBook.Count == 4)
                             {
                                 for (int j = p1.Hand.Count - 1; j >= 0; --j)
                                 {
@@ -363,9 +402,28 @@ namespace CardSuits
                                 }
                             }
                             break;
+
                         case Card.Rank.Three:
-                            p1Books[2].Add(p1.Hand[i]);
-                            if (p1Books[2].Count == 4)
+                            if (p1threeBook.Count == 0)
+                            {
+                                p1threeBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1threeBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1threeBook[k].pSuit)
+                                {
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1threeBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1threeBook.Count == 4)
                             {
                                 for (int j = p1.Hand.Count - 1; j >= 0; --j)
                                 {
@@ -374,11 +432,31 @@ namespace CardSuits
                                         p1.Hand.Remove(p1.Hand[j]);
                                     }
                                 }
+
                             }
                             break;
+
                         case Card.Rank.Four:
-                            p1Books[3].Add(p1.Hand[i]);
-                            if (p1Books[3].Count == 4)
+                            if (p1fourBook.Count == 0)
+                            {
+                                p1fourBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1fourBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1fourBook[k].pSuit)
+                                {
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1fourBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1fourBook.Count == 4)
                             {
                                 for (int j = p1.Hand.Count - 1; j >= 0; --j)
                                 {
@@ -389,9 +467,28 @@ namespace CardSuits
                                 }
                             }
                             break;
+
                         case Card.Rank.Five:
-                            p1Books[4].Add(p1.Hand[i]);
-                            if (p1Books[4].Count == 4)
+                            if (p1fiveBook.Count == 0)
+                            {
+                                p1fiveBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1fiveBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1fiveBook[k].pSuit)
+                                {
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1fiveBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1fiveBook.Count == 4)
                             {
                                 for (int j = p1.Hand.Count - 1; j >= 0; --j)
                                 {
@@ -402,9 +499,28 @@ namespace CardSuits
                                 }
                             }
                             break;
+
                         case Card.Rank.Six:
-                            p1Books[5].Add(p1.Hand[i]);
-                            if (p1Books[5].Count == 4)
+                            if (p1sixBook.Count == 0)
+                            {
+                                p1sixBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1sixBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1sixBook[k].pSuit)
+                                {
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1sixBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1sixBook.Count == 4)
                             {
                                 for (int j = p1.Hand.Count - 1; j >= 0; --j)
                                 {
@@ -415,9 +531,28 @@ namespace CardSuits
                                 }
                             }
                             break;
+
                         case Card.Rank.Seven:
-                            p1Books[6].Add(p1.Hand[i]);
-                            if (p1Books[6].Count == 4)
+                            if (p1sevenBook.Count == 0)
+                            {
+                                p1sevenBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1sevenBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1sevenBook[k].pSuit)
+                                {
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1sevenBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1sevenBook.Count == 4)
                             {
                                 for (int j = p1.Hand.Count - 1; j >= 0; --j)
                                 {
@@ -428,9 +563,28 @@ namespace CardSuits
                                 }
                             }
                             break;
+
                         case Card.Rank.Eight:
-                            p1Books[7].Add(p1.Hand[i]);
-                            if (p1Books[7].Count == 4)
+                            if (p1eightBook.Count == 0)
+                            {
+                                p1eightBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1eightBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1eightBook[k].pSuit)
+                                {
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1eightBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1eightBook.Count == 4)
                             {
                                 for (int j = p1.Hand.Count - 1; j >= 0; --j)
                                 {
@@ -441,9 +595,28 @@ namespace CardSuits
                                 }
                             }
                             break;
+
                         case Card.Rank.Nine:
-                            p1Books[8].Add(p1.Hand[i]);
-                            if (p1Books[8].Count == 4)
+                            if (p1nineBook.Count == 0)
+                            {
+                                p1nineBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1nineBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1nineBook[k].pSuit)
+                                {
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1nineBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1nineBook.Count == 4)
                             {
                                 for (int j = p1.Hand.Count - 1; j >= 0; --j)
                                 {
@@ -454,9 +627,28 @@ namespace CardSuits
                                 }
                             }
                             break;
+
                         case Card.Rank.Ten:
-                            p1Books[9].Add(p1.Hand[i]);
-                            if (p1Books[9].Count == 4)
+                            if (p1tenBook.Count == 0)
+                            {
+                                p1tenBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1tenBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1tenBook[k].pSuit)
+                                {
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1tenBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1tenBook.Count == 4)
                             {
                                 for (int j = p1.Hand.Count - 1; j >= 0; --j)
                                 {
@@ -467,9 +659,28 @@ namespace CardSuits
                                 }
                             }
                             break;
+
                         case Card.Rank.Jack:
-                            p1Books[10].Add(p1.Hand[i]);
-                            if (p1Books[10].Count == 4)
+                            if (p1jackBook.Count == 0)
+                            {
+                                p1jackBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1jackBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1jackBook[k].pSuit)
+                                {
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1jackBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1jackBook.Count == 4)
                             {
                                 for (int j = p1.Hand.Count - 1; j >= 0; --j)
                                 {
@@ -480,9 +691,28 @@ namespace CardSuits
                                 }
                             }
                             break;
+
                         case Card.Rank.Queen:
-                            p1Books[11].Add(p1.Hand[i]);
-                            if (p1Books[11].Count == 4)
+                            if (p1queenBook.Count == 0)
+                            {
+                                p1queenBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1queenBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1queenBook[k].pSuit)
+                                {
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1queenBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1queenBook.Count == 4)
                             {
                                 for (int j = p1.Hand.Count - 1; j >= 0; --j)
                                 {
@@ -493,9 +723,28 @@ namespace CardSuits
                                 }
                             }
                             break;
+
                         case Card.Rank.King:
-                            p1Books[12].Add(p1.Hand[i]);
-                            if (p1Books[12].Count == 4)
+                            if (p1kingBook.Count == 0)
+                            {
+                                p1kingBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1kingBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1kingBook[k].pSuit)
+                                {
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1kingBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1kingBook.Count == 4)
                             {
                                 for (int j = p1.Hand.Count - 1; j >= 0; --j)
                                 {
@@ -506,21 +755,27 @@ namespace CardSuits
                                 }
                             }
                             break;
+
                         default:
                             break;
+
                     }
                 }
 
-                foreach(var book in p1Books)
+                foreach (var card in p1Books[0])
+                {
+                    Console.WriteLine(card);
+                }
+                foreach (var book in p1Books)
                 {
                     if (book.Count == 4)
                     {
                         Console.WriteLine($"{p1.Name} has a book of {book[0].pRank}s");
                         Console.WriteLine($"{book[0].pRank} Amount: {book.Count}");
-                        foreach (Card card in book)
-                        {
-                            Console.WriteLine(card);
-                        }
+                        //foreach (Card card in book)
+                        //{
+                        //    Console.WriteLine(card);
+                        //}
                     }
                 }
 
@@ -575,13 +830,32 @@ namespace CardSuits
                     p2.Draw(p2.Hand, deck, 1);
                 }
                 //Console.WriteLine($"{p1}\n\n");
+
                 for (int i = p2.Hand.Count - 1; i >= 0; --i)
                 {
                     switch (p2.Hand[i].pRank)
                     {
                         case Card.Rank.Ace:
-                            p2Books[0].Add(p2.Hand[i]);
-                            if (p2Books[0].Count == 4)
+                            if (p2aceBook.Count == 0)
+                            {
+                                p2aceBook.Add(p2.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p2aceBook.Count; k++)
+                            {
+                                if (p2.Hand[i].pSuit == p2aceBook[k].pSuit)
+                                {
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p2aceBook.Add(p2.Hand[i]);
+                            }
+
+                            if (p2aceBook.Count == 4)
                             {
                                 for (int j = p2.Hand.Count - 1; j >= 0; --j)
                                 {
@@ -592,164 +866,395 @@ namespace CardSuits
                                 }
                             }
                             break;
+
                         case Card.Rank.Two:
-                            p2Books[1].Add(p2.Hand[i]);
-                            if (p2Books[1].Count == 4)
+                            if (p2twoBook.Count == 0)
+                            {
+                                p2twoBook.Add(p2.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p2twoBook.Count; k++)
+                            {
+                                if (p2.Hand[i].pSuit == p2twoBook[k].pSuit)
+                                {
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p2twoBook.Add(p2.Hand[i]);
+                            }
+
+                            if (p2twoBook.Count == 4)
                             {
                                 for (int j = p2.Hand.Count - 1; j >= 0; --j)
                                 {
-                                    if (p2.Hand[j].pRank == Card.Rank.Ace)
+                                    if (p2.Hand[j].pRank == Card.Rank.Two)
                                     {
                                         p2.Hand.Remove(p2.Hand[j]);
                                     }
                                 }
                             }
                             break;
+
                         case Card.Rank.Three:
-                            p2Books[2].Add(p2.Hand[i]);
-                            if (p2Books[2].Count == 4)
+                            if (p1threeBook.Count == 0)
                             {
-                                for (int j = p2.Hand.Count - 1; j >= 0; --j)
+                                p1threeBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1threeBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1threeBook[k].pSuit)
                                 {
-                                    if (p2.Hand[j].pRank == Card.Rank.Ace)
-                                    {
-                                        p2.Hand.Remove(p2.Hand[j]);
-                                    }
+                                    dupeCard++;
                                 }
                             }
+
+                            if (dupeCard == 0)
+                            {
+                                p1threeBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1threeBook.Count == 4)
+                            {
+                                for (int j = p1.Hand.Count - 1; j >= 0; --j)
+                                {
+                                    if (p1.Hand[j].pRank == Card.Rank.Ace)
+                                    {
+                                        p1.Hand.Remove(p1.Hand[j]);
+                                    }
+                                }
+
+                            }
                             break;
+
                         case Card.Rank.Four:
-                            p2Books[3].Add(p2.Hand[i]);
-                            if (p2Books[3].Count == 4)
+                            if (p1fourBook.Count == 0)
                             {
-                                for (int j = p2.Hand.Count - 1; j >= 0; --j)
+                                p1fourBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1fourBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1fourBook[k].pSuit)
                                 {
-                                    if (p2.Hand[j].pRank == Card.Rank.Ace)
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1fourBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1fourBook.Count == 4)
+                            {
+                                for (int j = p1.Hand.Count - 1; j >= 0; --j)
+                                {
+                                    if (p1.Hand[j].pRank == Card.Rank.Ace)
                                     {
-                                        p2.Hand.Remove(p2.Hand[j]);
+                                        p1.Hand.Remove(p1.Hand[j]);
                                     }
                                 }
                             }
                             break;
+
                         case Card.Rank.Five:
-                            p2Books[4].Add(p2.Hand[i]);
-                            if (p2Books[4].Count == 4)
+                            if (p1fiveBook.Count == 0)
                             {
-                                for (int j = p2.Hand.Count - 1; j >= 0; --j)
+                                p1fiveBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1fiveBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1fiveBook[k].pSuit)
                                 {
-                                    if (p2.Hand[j].pRank == Card.Rank.Ace)
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1fiveBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1fiveBook.Count == 4)
+                            {
+                                for (int j = p1.Hand.Count - 1; j >= 0; --j)
+                                {
+                                    if (p1.Hand[j].pRank == Card.Rank.Ace)
                                     {
-                                        p2.Hand.Remove(p2.Hand[j]);
+                                        p1.Hand.Remove(p1.Hand[j]);
                                     }
                                 }
                             }
                             break;
+
                         case Card.Rank.Six:
-                            p2Books[5].Add(p2.Hand[i]);
-                            if (p2Books[5].Count == 4)
+                            if (p1sixBook.Count == 0)
                             {
-                                for (int j = p2.Hand.Count - 1; j >= 0; --j)
+                                p1sixBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1sixBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1sixBook[k].pSuit)
                                 {
-                                    if (p2.Hand[j].pRank == Card.Rank.Ace)
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1sixBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1sixBook.Count == 4)
+                            {
+                                for (int j = p1.Hand.Count - 1; j >= 0; --j)
+                                {
+                                    if (p1.Hand[j].pRank == Card.Rank.Ace)
                                     {
-                                        p2.Hand.Remove(p2.Hand[j]);
+                                        p1.Hand.Remove(p1.Hand[j]);
                                     }
                                 }
                             }
                             break;
+
                         case Card.Rank.Seven:
-                            p2Books[6].Add(p2.Hand[i]);
-                            if (p2Books[6].Count == 4)
+                            if (p1sevenBook.Count == 0)
                             {
-                                for (int j = p2.Hand.Count - 1; j >= 0; --j)
+                                p1sevenBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1sevenBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1sevenBook[k].pSuit)
                                 {
-                                    if (p2.Hand[j].pRank == Card.Rank.Ace)
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1sevenBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1sevenBook.Count == 4)
+                            {
+                                for (int j = p1.Hand.Count - 1; j >= 0; --j)
+                                {
+                                    if (p1.Hand[j].pRank == Card.Rank.Ace)
                                     {
-                                        p2.Hand.Remove(p2.Hand[j]);
+                                        p1.Hand.Remove(p1.Hand[j]);
                                     }
                                 }
                             }
                             break;
+
                         case Card.Rank.Eight:
-                            p2Books[7].Add(p2.Hand[i]);
-                            if (p2Books[7].Count == 4)
+                            if (p1eightBook.Count == 0)
                             {
-                                for (int j = p2.Hand.Count - 1; j >= 0; --j)
+                                p1eightBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1eightBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1eightBook[k].pSuit)
                                 {
-                                    if (p2.Hand[j].pRank == Card.Rank.Ace)
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1eightBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1eightBook.Count == 4)
+                            {
+                                for (int j = p1.Hand.Count - 1; j >= 0; --j)
+                                {
+                                    if (p1.Hand[j].pRank == Card.Rank.Ace)
                                     {
-                                        p2.Hand.Remove(p2.Hand[j]);
+                                        p1.Hand.Remove(p1.Hand[j]);
                                     }
                                 }
                             }
                             break;
+
                         case Card.Rank.Nine:
-                            p2Books[8].Add(p2.Hand[i]);
-                            if (p2Books[8].Count == 4)
+                            if (p1nineBook.Count == 0)
                             {
-                                for (int j = p2.Hand.Count - 1; j >= 0; --j)
+                                p1nineBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1nineBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1nineBook[k].pSuit)
                                 {
-                                    if (p2.Hand[j].pRank == Card.Rank.Ace)
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1nineBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1nineBook.Count == 4)
+                            {
+                                for (int j = p1.Hand.Count - 1; j >= 0; --j)
+                                {
+                                    if (p1.Hand[j].pRank == Card.Rank.Ace)
                                     {
-                                        p2.Hand.Remove(p2.Hand[j]);
+                                        p1.Hand.Remove(p1.Hand[j]);
                                     }
                                 }
                             }
                             break;
+
                         case Card.Rank.Ten:
-                            p2Books[9].Add(p2.Hand[i]);
-                            if (p2Books[9].Count == 4)
+                            if (p1tenBook.Count == 0)
                             {
-                                for (int j = p2.Hand.Count - 1; j >= 0; --j)
+                                p1tenBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1tenBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1tenBook[k].pSuit)
                                 {
-                                    if (p2.Hand[j].pRank == Card.Rank.Ace)
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1tenBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1tenBook.Count == 4)
+                            {
+                                for (int j = p1.Hand.Count - 1; j >= 0; --j)
+                                {
+                                    if (p1.Hand[j].pRank == Card.Rank.Ace)
                                     {
-                                        p2.Hand.Remove(p2.Hand[j]);
+                                        p1.Hand.Remove(p1.Hand[j]);
                                     }
                                 }
                             }
                             break;
+
                         case Card.Rank.Jack:
-                            p2Books[10].Add(p2.Hand[i]);
-                            if (p2Books[10].Count == 4)
+                            if (p1jackBook.Count == 0)
                             {
-                                for (int j = p2.Hand.Count - 1; j >= 0; --j)
+                                p1jackBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1jackBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1jackBook[k].pSuit)
                                 {
-                                    if (p2.Hand[j].pRank == Card.Rank.Ace)
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1jackBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1jackBook.Count == 4)
+                            {
+                                for (int j = p1.Hand.Count - 1; j >= 0; --j)
+                                {
+                                    if (p1.Hand[j].pRank == Card.Rank.Ace)
                                     {
-                                        p2.Hand.Remove(p2.Hand[j]);
+                                        p1.Hand.Remove(p1.Hand[j]);
                                     }
                                 }
                             }
                             break;
+
                         case Card.Rank.Queen:
-                            p2Books[11].Add(p2.Hand[i]);
-                            if (p2Books[11].Count == 4)
+                            if (p1queenBook.Count == 0)
                             {
-                                for (int j = p2.Hand.Count - 1; j >= 0; --j)
+                                p1queenBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1queenBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1queenBook[k].pSuit)
                                 {
-                                    if (p2.Hand[j].pRank == Card.Rank.Ace)
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1queenBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1queenBook.Count == 4)
+                            {
+                                for (int j = p1.Hand.Count - 1; j >= 0; --j)
+                                {
+                                    if (p1.Hand[j].pRank == Card.Rank.Ace)
                                     {
-                                        p2.Hand.Remove(p2.Hand[j]);
+                                        p1.Hand.Remove(p1.Hand[j]);
                                     }
                                 }
                             }
                             break;
+
                         case Card.Rank.King:
-                            p2Books[12].Add(p2.Hand[i]);
-                            if (p2Books[12].Count == 4)
+                            if (p1kingBook.Count == 0)
                             {
-                                for (int j = p2.Hand.Count - 1; j >= 0; --j)
+                                p1kingBook.Add(p1.Hand[i]);
+                            }
+
+                            dupeCard = 0;
+                            for (int k = 0; k < p1kingBook.Count; k++)
+                            {
+                                if (p1.Hand[i].pSuit == p1kingBook[k].pSuit)
                                 {
-                                    if (p2.Hand[j].pRank == Card.Rank.Ace)
+                                    dupeCard++;
+                                }
+                            }
+
+                            if (dupeCard == 0)
+                            {
+                                p1kingBook.Add(p1.Hand[i]);
+                            }
+
+                            if (p1kingBook.Count == 4)
+                            {
+                                for (int j = p1.Hand.Count - 1; j >= 0; --j)
+                                {
+                                    if (p1.Hand[j].pRank == Card.Rank.Ace)
                                     {
-                                        p2.Hand.Remove(p2.Hand[j]);
+                                        p1.Hand.Remove(p1.Hand[j]);
                                     }
                                 }
                             }
                             break;
+
                         default:
                             break;
+
                     }
                 }
                 foreach (var book in p2Books)
