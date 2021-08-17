@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiamondLetters", "DiamondLe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiamondLetterTest", "DiamondLetterTest\DiamondLetterTest.csproj", "{8F8B9737-C0FA-46F1-B1B7-0A8304D9EE51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OddEvenKata", "OddEvenKata\OddEvenKata.csproj", "{618CA662-EA96-4F52-A85C-765DC0EF25F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OddEvenKataTest", "OddEvenKataTest\OddEvenKataTest.csproj", "{CCA4D304-0E15-4515-9351-AA6BA229C2B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +73,14 @@ Global
 		{8F8B9737-C0FA-46F1-B1B7-0A8304D9EE51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F8B9737-C0FA-46F1-B1B7-0A8304D9EE51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F8B9737-C0FA-46F1-B1B7-0A8304D9EE51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{618CA662-EA96-4F52-A85C-765DC0EF25F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{618CA662-EA96-4F52-A85C-765DC0EF25F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{618CA662-EA96-4F52-A85C-765DC0EF25F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{618CA662-EA96-4F52-A85C-765DC0EF25F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCA4D304-0E15-4515-9351-AA6BA229C2B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCA4D304-0E15-4515-9351-AA6BA229C2B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCA4D304-0E15-4515-9351-AA6BA229C2B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCA4D304-0E15-4515-9351-AA6BA229C2B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

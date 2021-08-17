@@ -1,0 +1,13 @@
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\OddEvenKata\bin\Debug\netcoreapp3.1\OddEvenKata.exe
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\OddEvenKata\bin\Debug\netcoreapp3.1\OddEvenKata.deps.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\OddEvenKata\bin\Debug\netcoreapp3.1\OddEvenKata.runtimeconfig.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\OddEvenKata\bin\Debug\netcoreapp3.1\OddEvenKata.runtimeconfig.dev.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\OddEvenKata\bin\Debug\netcoreapp3.1\OddEvenKata.dll
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\OddEvenKata\bin\Debug\netcoreapp3.1\OddEvenKata.pdb
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\OddEvenKata\obj\Debug\netcoreapp3.1\OddEvenKata.csproj.AssemblyReference.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\OddEvenKata\obj\Debug\netcoreapp3.1\OddEvenKata.AssemblyInfoInputs.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\OddEvenKata\obj\Debug\netcoreapp3.1\OddEvenKata.AssemblyInfo.cs
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\OddEvenKata\obj\Debug\netcoreapp3.1\OddEvenKata.csproj.CoreCompileInputs.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\OddEvenKata\obj\Debug\netcoreapp3.1\OddEvenKata.dll
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\OddEvenKata\obj\Debug\netcoreapp3.1\OddEvenKata.pdb
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\OddEvenKata\obj\Debug\netcoreapp3.1\OddEvenKata.genruntimeconfig.cache
