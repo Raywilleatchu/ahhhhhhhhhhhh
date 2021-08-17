@@ -1,0 +1,13 @@
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\DiamondLetters\bin\Debug\netcoreapp3.1\DiamondLetters.exe
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\DiamondLetters\bin\Debug\netcoreapp3.1\DiamondLetters.deps.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\DiamondLetters\bin\Debug\netcoreapp3.1\DiamondLetters.runtimeconfig.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\DiamondLetters\bin\Debug\netcoreapp3.1\DiamondLetters.runtimeconfig.dev.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\DiamondLetters\bin\Debug\netcoreapp3.1\DiamondLetters.dll
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\DiamondLetters\bin\Debug\netcoreapp3.1\DiamondLetters.pdb
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\DiamondLetters\obj\Debug\netcoreapp3.1\DiamondLetters.csproj.AssemblyReference.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\DiamondLetters\obj\Debug\netcoreapp3.1\DiamondLetters.AssemblyInfoInputs.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\DiamondLetters\obj\Debug\netcoreapp3.1\DiamondLetters.AssemblyInfo.cs
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\DiamondLetters\obj\Debug\netcoreapp3.1\DiamondLetters.csproj.CoreCompileInputs.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\DiamondLetters\obj\Debug\netcoreapp3.1\DiamondLetters.dll
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\DiamondLetters\obj\Debug\netcoreapp3.1\DiamondLetters.pdb
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\DiamondLetters\obj\Debug\netcoreapp3.1\DiamondLetters.genruntimeconfig.cache

@@ -1,0 +1,13 @@
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Primes\bin\Debug\netcoreapp3.1\Primes.exe
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Primes\bin\Debug\netcoreapp3.1\Primes.deps.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Primes\bin\Debug\netcoreapp3.1\Primes.runtimeconfig.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Primes\bin\Debug\netcoreapp3.1\Primes.runtimeconfig.dev.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Primes\bin\Debug\netcoreapp3.1\Primes.dll
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Primes\bin\Debug\netcoreapp3.1\Primes.pdb
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Primes\obj\Debug\netcoreapp3.1\Primes.csproj.AssemblyReference.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Primes\obj\Debug\netcoreapp3.1\Primes.AssemblyInfoInputs.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Primes\obj\Debug\netcoreapp3.1\Primes.AssemblyInfo.cs
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Primes\obj\Debug\netcoreapp3.1\Primes.csproj.CoreCompileInputs.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Primes\obj\Debug\netcoreapp3.1\Primes.dll
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Primes\obj\Debug\netcoreapp3.1\Primes.pdb
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\Primes\obj\Debug\netcoreapp3.1\Primes.genruntimeconfig.cache
