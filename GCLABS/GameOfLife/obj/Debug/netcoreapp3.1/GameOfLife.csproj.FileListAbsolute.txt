@@ -1,0 +1,13 @@
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\GameOfLife\bin\Debug\netcoreapp3.1\GameOfLife.exe
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\GameOfLife\bin\Debug\netcoreapp3.1\GameOfLife.deps.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\GameOfLife\bin\Debug\netcoreapp3.1\GameOfLife.runtimeconfig.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\GameOfLife\bin\Debug\netcoreapp3.1\GameOfLife.runtimeconfig.dev.json
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\GameOfLife\bin\Debug\netcoreapp3.1\GameOfLife.dll
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\GameOfLife\bin\Debug\netcoreapp3.1\GameOfLife.pdb
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\GameOfLife\obj\Debug\netcoreapp3.1\GameOfLife.csproj.AssemblyReference.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\GameOfLife\obj\Debug\netcoreapp3.1\GameOfLife.AssemblyInfoInputs.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\GameOfLife\obj\Debug\netcoreapp3.1\GameOfLife.AssemblyInfo.cs
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\GameOfLife\obj\Debug\netcoreapp3.1\GameOfLife.csproj.CoreCompileInputs.cache
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\GameOfLife\obj\Debug\netcoreapp3.1\GameOfLife.dll
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\GameOfLife\obj\Debug\netcoreapp3.1\GameOfLife.pdb
+C:\Users\Rmansour2\Documents\GCREPO\GCLABS\GameOfLife\obj\Debug\netcoreapp3.1\GameOfLife.genruntimeconfig.cache
