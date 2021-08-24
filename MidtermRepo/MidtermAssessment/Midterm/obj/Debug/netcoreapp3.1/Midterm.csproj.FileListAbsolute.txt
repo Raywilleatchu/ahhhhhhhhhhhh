@@ -1,0 +1,13 @@
+C:\Users\Rmansour2\Documents\GCREPO\MidtermRepo\MidtermAssessment\Midterm\bin\Debug\netcoreapp3.1\Midterm.exe
+C:\Users\Rmansour2\Documents\GCREPO\MidtermRepo\MidtermAssessment\Midterm\bin\Debug\netcoreapp3.1\Midterm.deps.json
+C:\Users\Rmansour2\Documents\GCREPO\MidtermRepo\MidtermAssessment\Midterm\bin\Debug\netcoreapp3.1\Midterm.runtimeconfig.json
+C:\Users\Rmansour2\Documents\GCREPO\MidtermRepo\MidtermAssessment\Midterm\bin\Debug\netcoreapp3.1\Midterm.runtimeconfig.dev.json
+C:\Users\Rmansour2\Documents\GCREPO\MidtermRepo\MidtermAssessment\Midterm\bin\Debug\netcoreapp3.1\Midterm.dll
+C:\Users\Rmansour2\Documents\GCREPO\MidtermRepo\MidtermAssessment\Midterm\bin\Debug\netcoreapp3.1\Midterm.pdb
+C:\Users\Rmansour2\Documents\GCREPO\MidtermRepo\MidtermAssessment\Midterm\obj\Debug\netcoreapp3.1\Midterm.csproj.AssemblyReference.cache
+C:\Users\Rmansour2\Documents\GCREPO\MidtermRepo\MidtermAssessment\Midterm\obj\Debug\netcoreapp3.1\Midterm.AssemblyInfoInputs.cache
+C:\Users\Rmansour2\Documents\GCREPO\MidtermRepo\MidtermAssessment\Midterm\obj\Debug\netcoreapp3.1\Midterm.AssemblyInfo.cs
+C:\Users\Rmansour2\Documents\GCREPO\MidtermRepo\MidtermAssessment\Midterm\obj\Debug\netcoreapp3.1\Midterm.csproj.CoreCompileInputs.cache
+C:\Users\Rmansour2\Documents\GCREPO\MidtermRepo\MidtermAssessment\Midterm\obj\Debug\netcoreapp3.1\Midterm.dll
+C:\Users\Rmansour2\Documents\GCREPO\MidtermRepo\MidtermAssessment\Midterm\obj\Debug\netcoreapp3.1\Midterm.pdb
+C:\Users\Rmansour2\Documents\GCREPO\MidtermRepo\MidtermAssessment\Midterm\obj\Debug\netcoreapp3.1\Midterm.genruntimeconfig.cache
